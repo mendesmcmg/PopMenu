@@ -2,7 +2,11 @@ require "test_helper"
 
 class MenuItemsControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @restaurant_menu = RestaurantMenu.create(name: "Dinner Menu")
+    @restaurant = Restaurant.create(name: "Italian Restaurant")  # Create a restaurant
+    @restaurant_menu = RestaurantMenu.create(
+      name: "Dinner Menu",
+      restaurant: @restaurant 
+    )
     @menu_item = @restaurant_menu.menu_items.create(name: "Salad", price: 8.99)
   end
 
