@@ -21,6 +21,10 @@ class RestaurantMenuTest < ActiveSupport::TestCase
     assert_equal @restaurant_menu.active, true
   end
 
+  test "should belong to restaurant" do 
+    assert_equal @restaurant, @restaurant_menu.restaurant
+  end
+
   test "should have many menu items" do
     assert_respond_to @restaurant_menu, :menu_items
   end
