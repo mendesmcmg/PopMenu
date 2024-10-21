@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant_menu: one
+  name: MyString
+  description: MyText
+  price: 9.99
+  category: MyString
+  available: false
+
+two:
+  restaurant_menu: two
+  name: MyString
+  description: MyText
+  price: 9.99
+  category: MyString
+  available: false
