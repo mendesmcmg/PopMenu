@@ -10,29 +10,35 @@
 # db/seeds.rb
 
 # Clear existing data
+Restaurant.destroy_all
 RestaurantMenu.destroy_all
 MenuItem.destroy_all
 
-# Create some restaurant menus
-menu1 = RestaurantMenu.create!(
+# RESTAURANTS
+restaurant1 = Restaurant.create!(name: "Italian Bistro")
+restaurant2 = Restaurant.create!(name: "Vegan Paradise")
+restaurant3 = Restaurant.create!(name: "Grill House")
+
+# MENUS
+menu1 = restaurant1.restaurant_menus.create!(
   name: "Italian Classics",
   description: "A selection of traditional Italian dishes.",
   active: true
 )
 
-menu2 = RestaurantMenu.create!(
+menu2 = restaurant2.restaurant_menus.create!(
   name: "Vegan Delights",
   description: "A variety of delicious and healthy vegan options.",
   active: true
 )
 
-menu3 = RestaurantMenu.create!(
+menu3 = restaurant3.restaurant_menus.create!(
   name: "Grill Specialties",
   description: "Grilled dishes for meat lovers.",
   active: true
 )
 
-# Create menu items for the first menu
+# ITEMS
 MenuItem.create!([
   {
     restaurant_menu: menu1,
@@ -52,7 +58,7 @@ MenuItem.create!([
   }
 ])
 
-# Create menu items for the second menu
+# ITEMS (MENU 2)
 MenuItem.create!([
   {
     restaurant_menu: menu2,
@@ -72,7 +78,7 @@ MenuItem.create!([
   }
 ])
 
-# Create menu items for the third menu
+# ITEMS (MENU 3)
 MenuItem.create!([
   {
     restaurant_menu: menu3,
