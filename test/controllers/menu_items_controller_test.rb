@@ -1,7 +1,18 @@
 require "test_helper"
 
 class MenuItemsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @restaurant_menu = RestaurantMenu.create(name: "Dinner Menu")
+    @menu_item = @restaurant_menu.menu_items.create(name: "Salad", price: 8.99)
+  end
+
+  test "should get index" do
+    get menu_items_path(@restaurant_menu), as: :json
+    assert_response :success
+  end
+
+  test "should show menu item" do
+    get menu_item_path(@menu_item), as: :json
+    assert_response :success
+  end
 end
