@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :restaurant_menus, only: [:index, :show]
+  resources :menu_items, only: [:index, :show]
 end
