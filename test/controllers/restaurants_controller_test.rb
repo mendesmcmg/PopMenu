@@ -1,7 +1,6 @@
 require "test_helper"
 
 class RestaurantsControllerTest < ActionDispatch::IntegrationTest
-  fixtures :restaurants, :restaurant_menus, :menu_items
 
   def setup
     @restaurant = restaurants(:one)          

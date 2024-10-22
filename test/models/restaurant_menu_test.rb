@@ -1,7 +1,6 @@
 require "test_helper"
 
 class RestaurantMenuTest < ActiveSupport::TestCase
-  fixtures :restaurants
 
   def setup
     @restaurant = restaurants(:one) 

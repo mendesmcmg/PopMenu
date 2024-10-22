@@ -1,7 +1,6 @@
 require "test_helper"
 
 class MenuItemTest < ActiveSupport::TestCase
-  fixtures :menu_items
 
   def setup
     @menu_item = menu_items(:one)
