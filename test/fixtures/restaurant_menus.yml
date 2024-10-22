@@ -1,3 +1,17 @@
-dinner_menu:
-  name: "Dinner Menu"
-  restaurant: italian_restaurant
+one:
+  name: "Italian Classics"
+  description: "A selection of traditional Italian dishes."
+  active: true
+  restaurant: one
+
+two:
+  name: "Vegan Delights"
+  description: "A variety of delicious and healthy vegan options."
+  active: true
+  restaurant: one
+
+three:
+  name: "Grill Specialties"
+  description: "Grilled dishes for meat lovers."
+  active: true
+  restaurant: one

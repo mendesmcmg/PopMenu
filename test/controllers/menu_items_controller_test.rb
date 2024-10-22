@@ -1,13 +1,12 @@
 require "test_helper"
 
 class MenuItemsControllerTest < ActionDispatch::IntegrationTest
+  fixtures :restaurants, :restaurant_menus, :menu_items 
+
   def setup
-    @restaurant = Restaurant.create(name: "Italian Restaurant")  # Create a restaurant
-    @restaurant_menu = RestaurantMenu.create(
-      name: "Dinner Menu",
-      restaurant: @restaurant 
-    )
-    @menu_item = @restaurant_menu.menu_items.create(name: "Salad", price: 8.99)
+    @restaurant = restaurants(:one)
+    @restaurant_menu = restaurant_menus(:one)
+    @menu_item = menu_items(:one)
   end
 
   test "should get index" do

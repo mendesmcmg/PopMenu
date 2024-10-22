@@ -1,6 +1,20 @@
-spaghetti:
-  name: "Spaghetti"
+one:
+  name: "Spaghetti Carbonara"
+  description: "Classic Roman pasta with eggs, cheese, pancetta, and pepper."
   price: 12.99
   category: "Pasta"
   available: true
-  restaurant_menu: dinner_menu
+
+two:
+  name: "Margherita Pizza"
+  description: "Tomato, mozzarella, and fresh basil."
+  price: 9.99
+  category: "Pizza"
+  available: true
+
+three:
+  name: "Vegan Buddha Bowl"
+  description: "A healthy bowl with quinoa, chickpeas, and mixed vegetables."
+  price: 10.50
+  category: "Salad"
+  available: true

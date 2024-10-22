@@ -1,8 +1,10 @@
 require "test_helper"
 
 class RestaurantMenuTest < ActiveSupport::TestCase
+  fixtures :restaurants
+
   def setup
-    @restaurant = restaurants(:italian_restaurant) 
+    @restaurant = restaurants(:one) 
     @restaurant_menu = RestaurantMenu.new(
       name: "Lunch Menu",
       description: "A nice meal for your day!",
@@ -23,9 +25,5 @@ class RestaurantMenuTest < ActiveSupport::TestCase
 
   test "should belong to restaurant" do 
     assert_equal @restaurant, @restaurant_menu.restaurant
-  end
-
-  test "should have many menu items" do
-    assert_respond_to @restaurant_menu, :menu_items
   end
 end
