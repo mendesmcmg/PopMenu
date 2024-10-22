@@ -13,21 +13,21 @@ menu1 = RestaurantMenu.create!(
   name: "Italian Classics",
   description: "A selection of traditional Italian dishes.",
   active: true,
-  restaurant: restaurant1  # Associate with a restaurant
+  restaurant: restaurant1 
 )
 
 menu2 = RestaurantMenu.create!(
   name: "Vegan Delights",
   description: "A variety of delicious and healthy vegan options.",
   active: true,
-  restaurant: restaurant2  # Associate with a restaurant
+  restaurant: restaurant2 
 )
 
 menu3 = RestaurantMenu.create!(
   name: "Grill Specialties",
   description: "Grilled dishes for meat lovers.",
   active: true,
-  restaurant: restaurant3  # Associate with a restaurant
+  restaurant: restaurant3 
 )
 
 # Create menu items
