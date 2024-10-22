@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_21_174553) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_21_224139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "menu_items", force: :cascade do |t|
-    t.bigint "restaurant_menu_id", null: false
     t.string "name"
     t.text "description"
     t.decimal "price"
@@ -23,7 +22,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_21_174553) do
     t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["restaurant_menu_id"], name: "index_menu_items_on_restaurant_menu_id"
+    t.index ["name"], name: "index_menu_items_on_name", unique: true
+  end
+
+  create_table "menu_items_restaurant_menus", id: false, force: :cascade do |t|
+    t.bigint "restaurant_menu_id", null: false
+    t.bigint "menu_item_id", null: false
+    t.index ["menu_item_id", "restaurant_menu_id"], name: "idx_on_menu_item_id_restaurant_menu_id_92abf94c31"
+    t.index ["restaurant_menu_id", "menu_item_id"], name: "idx_on_restaurant_menu_id_menu_item_id_01bce904bf"
   end
 
   create_table "restaurant_menus", force: :cascade do |t|
@@ -32,7 +38,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_21_174553) do
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "restaurant_id", null: false
+    t.index ["restaurant_id"], name: "index_restaurant_menus_on_restaurant_id"
   end
 
-  add_foreign_key "menu_items", "restaurant_menus"
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "restaurant_menus", "restaurants"
 end

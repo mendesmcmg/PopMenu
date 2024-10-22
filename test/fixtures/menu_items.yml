@@ -1,17 +1,20 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  restaurant_menu: one
-  name: MyString
-  description: MyText
-  price: 9.99
-  category: MyString
-  available: false
+  name: "Spaghetti Carbonara"
+  description: "Classic Roman pasta with eggs, cheese, pancetta, and pepper."
+  price: 12.99
+  category: "Pasta"
+  available: true
 
 two:
-  restaurant_menu: two
-  name: MyString
-  description: MyText
+  name: "Margherita Pizza"
+  description: "Tomato, mozzarella, and fresh basil."
   price: 9.99
-  category: MyString
-  available: false
+  category: "Pizza"
+  available: true
+
+three:
+  name: "Vegan Buddha Bowl"
+  description: "A healthy bowl with quinoa, chickpeas, and mixed vegetables."
+  price: 10.50
+  category: "Salad"
+  available: true
